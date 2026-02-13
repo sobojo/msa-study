@@ -1,0 +1,18 @@
+# Gradle
+.gradle/
+build/
+
+# Eclipse
+.project
+.classpath
+.settings/
+bin/
+
+# VS Code
+.vscode/
+
+# Compiled class files
+*.class
+
+# Generated files
+generated/
