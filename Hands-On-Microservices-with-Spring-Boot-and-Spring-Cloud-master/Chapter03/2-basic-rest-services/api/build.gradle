@@ -1,0 +1,42 @@
+buildscript {
+	ext {
+		springBootVersion = '2.3.2.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+plugins {
+	// api 어플리케이션으로 org.springframework.boot 사용 안함
+	// spring-boot-dependencies BOM 자동 적용됨
+	// 라이브러리 모듈에서는 BOM 수동 적용 필요
+	id "java"
+	id "eclipse"
+	id "io.spring.dependency-management" version "1.0.9.RELEASE"
+}
+
+
+group = 'se.magnus.microservices.api'
+version = '1.0.0-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation('org.springframework.boot:spring-boot-starter-webflux')
+	testImplementation('org.springframework.boot:spring-boot-starter-test')
+}
+
+// BOM 수동 적용
+dependencyManagement {
+    imports { mavenBom("org.springframework.boot:spring-boot-dependencies:${springBootVersion}") }
+}
+
+//Boot 플러그인을 쓰면 bootJar 생성됨으로 실행 가능해짐
+//라이브러리 모듈에서는 bootJar 비활성화
