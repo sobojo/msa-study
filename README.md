@@ -45,4 +45,5 @@ dependencyManagement {
 
 
 API applications (controller들을 interface로 생성하여 통합 API 어플리케이션에서 구현하여 사용)
-통합 API application (개별 application들을 통합 구현하는 application)
+통합 API application (개별 application들의 interface controller 통합 구현하는 application) ----- ProductCompositeIntegration.java
+복합 API application (개별 application의 복합 통신들을 묶어서 처리하는 aplication) ----- ProductCompositeServiceImpl.java
